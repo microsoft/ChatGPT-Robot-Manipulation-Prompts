@@ -11,7 +11,7 @@ This repository provides a set of prompts that can be used with OpenAI's ChatGPT
 ```bash
 > pip install -r requirements.txt
 ```
-Then, go to a subfolder in [example/](./example) (for example, [example/task_decomposition](./example/task_decomposition)), run the following command to run the sample code:
+Then, go to a subfolder in [example/](./examples) (for example, [example/task_decomposition](./examples/task_decomposition)), run the following command to run the sample code:
 ```bash
 python aimodel.py --scenarios <scenario_name>
 ```
