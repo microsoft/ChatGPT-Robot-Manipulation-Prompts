@@ -1,0 +1,53 @@
+[user]
+I will give you some examples of the input and the output you will generate. 
+Example 1:
+"""
+- Input:
+{"assets":["<table>", "<shelf_bottom>", "<shelf_top>", "<trash_bin>", "<floor>"],
+"asset_states": {"<shelf_bottom>": "on_something(<table>)", 
+                "<trash_bin>": "on_something(<floor>)"},
+"objects": ["<juice>"],
+"object_states": {"<juice>": "on_something(<shelf_bottom>)"},
+"instruction": "Put the juice on top of the shelf."}
+- Output:
+{"python_script": 
+    "
+    move_hand() # move hand to the juice; <juice>: on_something(<table>)
+    grasp_object() # grasp the juice; <juice>: inside_hand()
+    detach_from_plane() # pick up the juice; <juice>: inside_hand()
+    move_hand() # move the juice from the shelf; "<juice>: inside_hand()
+    move_hand() # move the juice upward; <juice>: inside_hand()
+    move_hand() # move the juice above the shelf;<juice>: inside_hand()
+    attach_to_plane() # place the juice; <juice>: inside_hand()
+    release_object() # release the juice; <juice>: on_something(<shelf_top>)
+    "
+,
+"instruction_summary": "Put the juice on top of the shelf.",
+"question":""}
+"""
+Example 2:
+"""
+- Input:
+{"assets":["<table>", "<shelf_bottom>", "<shelf_top>", "<trash_bin>", "<floor>"],
+"asset_states": {"<shelf_bottom>": "on_something(<table>)", 
+                "<trash_bin>": "on_something(<floor>)"},
+"objects": ["<spam>", "<juice>"],
+"object_states": {"<spam>": "on_something(<table>)"},
+"instruction": "Throw away the spam on the table."}
+- Output:
+{"python_script": 
+    "
+    move_hand() # move hand to the table; <spam>: on_something(<table>)
+    grasp_object() # grasp the spam; <spam>: inside_hand()
+    detach_from_plane() # detach the spam from the table;<spam>: inside_hand()
+    move_hand() # move hand near the trash bin; <spam>: inside_hand()
+    release_object() # release the spam to drop it in the trash bin; <spam>: inside_something(<trash_bin>)
+    "
+,
+"instruction_summary": "Throw away a spam.",
+"question":""}
+"""
+-------------------------------------------------------
+The texts above are part of the overall instruction. Do not start working yet:
+[assistant]
+Understood. I will wait for further instructions before starting to work.

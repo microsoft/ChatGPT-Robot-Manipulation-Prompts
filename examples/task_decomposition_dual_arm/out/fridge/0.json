@@ -1,0 +1,72 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "move_hand(right)",
+            "grasp_object(right)",
+            "open_by_rotate(right)",
+            "move_hand(right)",
+            "grasp_object(left)",
+            "detach_from_plane(right)",
+            "move_hand(left)",
+            "move_hand(left)",
+            "move_hand(left)",
+            "attach_to_plane(left)",
+            "release_object(left)",
+            "close_by_rotate(right)"
+        ],
+        "step_instructions": [
+            "move the right hand near the fridge handle",
+            "grasp the fridge handle with the right hand",
+            "open the fridge by pulling the handle with the right hand",
+            "move the right hand near the juice",
+            "grasp the juice with the left hand",
+            "pick up the juice with the left hand",
+            "move the left hand to the floor",
+            "move the left hand to the floor",
+            "move the left hand to the floor",
+            "place the juice on the floor with the left hand",
+            "release the juice with the left hand",
+            "close the fridge by pushing the handle with the right hand"
+        ],
+        "object_names": [
+            "<fridge_handle>",
+            "<juice>"
+        ]
+    },
+    "environment_before": {
+        "assets": [
+            "<fridge>",
+            "<floor>"
+        ],
+        "asset_states": {
+            "<fridge>": "on_something(<floor>)"
+        },
+        "objects": [
+            "<fridge_handle>",
+            "<juice>"
+        ],
+        "object_states": {
+            "<fridge_handle>": "closed()",
+            "<juice>": "inside_something(<fridge>)"
+        }
+    },
+    "environment_after": {
+        "assets": [
+            "<fridge>",
+            "<floor>"
+        ],
+        "asset_states": {
+            "<fridge>": "on_something(<floor>)"
+        },
+        "objects": [
+            "<fridge_handle>",
+            "<juice>"
+        ],
+        "object_states": {
+            "<fridge_handle>": "closed()",
+            "<juice>": "on_something(<floor>)"
+        }
+    },
+    "instruction_summary": "Open the fridge with the right arm, take the juice and put it on the floor with the left arm, and close the fridge",
+    "question": ""
+}

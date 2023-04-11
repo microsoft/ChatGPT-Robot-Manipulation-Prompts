@@ -1,14 +1,32 @@
-# Project
+# ChatGPT-Robot-Manipulation-Prompts
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+This repository provides a set of prompts that can be used with OpenAI's ChatGPT to enable natural language communication between humans and robots for executing tasks. The prompts are designed to allow ChatGPT to convert natural language instructions into an executable robot action sequence, with a focus on robot manipulation tasks. The prompts are easy to customize and integrate with existing robot control and visual recognition systems.
 
-As the maintainer of this project, please make a few updates:
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+![overview](./img/overview.jpg)
+## How to use
+1. We provide sample code for using ChatGPT through [Azure OpenAI](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/overview). Fill in the [secrets.json](./secrets.json) with your credential information. Even if you do not have a subscription, you can try it out by copying and pasting the prompts into the [OpenAI's interface](https://chat.openai.com/).
+
+2. If you have a Azure subsctiption, install the required python packages by running the following command in a terminal session (note: we have confirmed that the sample codes work with python 3.9.16):
+```bash
+> pip install -r requirements.txt
+```
+Then, go to a subfolder in [example/](./example) (for example, [example/task_decomposition](./example/task_decomposition)), run the following command to run the sample code:
+```bash
+python aimodel.py --scenarios <scenario_name>
+```
+Replace `<scenario_name>` with the name of the scenario you want to run. Specific scenario names can be found in the aimodel.py.
+
+## Bibliography
+```
+@misc{wake2023chatgpt,
+      title={ChatGPT Empowered Long-Step Robot Control in Various Environments: A Case Application}, 
+      author={Naoki Wake and Atsushi Kanehira and Kazuhiro Sasabuchi and Jun Takamatsu and Katsushi Ikeuchi},
+      year={2023},
+      eprint={2304.03893},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO}}
+```
 
 ## Contributing
 

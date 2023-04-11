@@ -1,0 +1,18 @@
+Start working. Resume from the environment below.
+"""
+{"environment":[ENVIRONMENT]}
+"""
+The instruction is as follows:
+"""
+{"instruction": "[INSTRUCTION]"}
+"""
+The dictionary that you return should be formatted as python dictionary. Follow these rules:
+1. The first element should be move_hand() to move the robot hand closer to the object. 
+2. Make sure that each element of the ["step_instructions"] explains corresponding element of the ["task_sequence"]. Refer to "ROBOT ACTION LIST" to understand the elements of ["task_sequence"].
+3, The length of the ["step_instructions"] list must be the same as the length of the ["task_sequence"] list.
+4. Even though objects disappear, do not delete them from the environment and use the "STATE LIST" to keep track of all the objects. 
+5. Make sure that you output a consistent manipultation. For example, grasping should not occur in successive steps.
+6. Never left ',' at the end of the list.
+7. All keys of the dictionary should be double-quoted.
+8. Insert ``` at the beginning and the end of the dictionary to separate it from the rest of your response.
+Adhere to the output format I defined above. Think step by step, being aware of what the left/right hand is grabbing or not grabbing.

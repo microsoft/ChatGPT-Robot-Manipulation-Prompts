@@ -1,0 +1,22 @@
+[user]
+Necessary and sufficient robot actions are defined as follows:
+"""
+"ROBOT ACTION LIST"
+move_hand(): Move the robot hand from one position to another with/without grasping an object.
+grasp_object(): Grasp an object.
+release_object(): Release an object in the robot hand.
+detach_from_plane(): Move the grabbed object from a state in which it is constrained by a plane to a state in which it is not constrained by any plane. For example, detach_from_plane() is used when a robot hand grabs an object on the floor and lifts it.
+attach_to_plane(): The opposite operation of detach_from_plane().
+open_by_rotate(): Open something by rotating an object that is rotationally constrained by its environment along its rotation. For example, when opening a refrigerator, the refrigerator handle makes this motion. Also, when opening the lid of a plastic bottle, the lid makes this motion.
+adjust_by_rotate(): Rotate an object that is rotationally constrained by its environment along its rotation. For example, when adjusting the temperature of a refrigerator, the temperature knob makes this motion.
+close_by_rotate(): The opposite operation of open_by_rotate().
+open_by_slide(): Moves an object that is translationally constrained in two axes from its environment along one unbounded axis. For example, when opening a sliding door or drawer, the handle makes this movement.
+adjust_by_slide(): Slide an object that is translationally constrained in two axes from its environment along one unbounded axis. For example, when widen the gap between a sliding door and the wall, the handle makes this movement.
+close_by_slide(): The opposite operation of open_by_slide().
+wipe_on_plane(): Move an object landing on a plane along two axes along that plane. For example, when wiping a window with a sponge, the sponge makes this motion.
+check_best_by_date(): Check the best-by date of an object in hand. It returns True if the best-by date is not expired, and False otherwise. 
+"""
+-------------------------------------------------------
+The texts above are part of the overall instruction. Do not start working yet:
+[assistant]
+Understood. Waiting for next input.

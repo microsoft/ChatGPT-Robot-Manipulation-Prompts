@@ -1,0 +1,53 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "move_hand()",
+            "grasp_object()",
+            "close_by_rotate()",
+            "release_object()"
+        ],
+        "step_instructions": [
+            "move the hand near the fridge handle",
+            "grasp the handle",
+            "close the fridge by rotating the handle",
+            "release the handle"
+        ],
+        "object_name": "<fridge_handle>"
+    },
+    "environment_before": {
+        "assets": [
+            "<fridge>",
+            "<floor>"
+        ],
+        "asset_states": {
+            "<fridge>": "on_something(<floor>)"
+        },
+        "objects": [
+            "<fridge_handle>",
+            "<juice>"
+        ],
+        "object_states": {
+            "<fridge_handle>": "open()",
+            "<juice>": "on_something(<floor>)"
+        }
+    },
+    "environment_after": {
+        "assets": [
+            "<fridge>",
+            "<floor>"
+        ],
+        "asset_states": {
+            "<fridge>": "on_something(<floor>)"
+        },
+        "objects": [
+            "<fridge_handle>",
+            "<juice>"
+        ],
+        "object_states": {
+            "<fridge_handle>": "closed()",
+            "<juice>": "on_something(<floor>)"
+        }
+    },
+    "instruction_summary": "close the fridge",
+    "question": ""
+}

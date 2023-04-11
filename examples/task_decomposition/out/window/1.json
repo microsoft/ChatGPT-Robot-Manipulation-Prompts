@@ -1,0 +1,57 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "move_hand()",
+            "grasp_object()",
+            "detach_from_plane()",
+            "move_object()",
+            "release_object()"
+        ],
+        "step_instructions": [
+            "move the hand near the sponge",
+            "grasp the sponge",
+            "pick up the sponge",
+            "bring the sponge above the trash bin",
+            "release the sponge and drop it in the trash bin"
+        ],
+        "object_name": "<sponge>"
+    },
+    "environment_before": {
+        "assets": [
+            "<table>",
+            "<window>",
+            "<trash_bin>",
+            "<floor>"
+        ],
+        "asset_states": {
+            "<table>": "next_to(<window>)",
+            "<trash_bin>": "on_something(<floor>)"
+        },
+        "objects": [
+            "<sponge>"
+        ],
+        "object_states": {
+            "<sponge>": "on_something(<table>)"
+        }
+    },
+    "environment_after": {
+        "assets": [
+            "<table>",
+            "<window>",
+            "<trash_bin>",
+            "<floor>"
+        ],
+        "asset_states": {
+            "<table>": "next_to(<window>)",
+            "<trash_bin>": "on_something(<floor>)"
+        },
+        "objects": [
+            "<sponge>"
+        ],
+        "object_states": {
+            "<sponge>": "inside_something(<trash_bin>)"
+        }
+    },
+    "instruction_summary": "throw away the sponge",
+    "question": ""
+}

@@ -1,0 +1,61 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "move_hand()",
+            "grasp_object()",
+            "detach_from_plane()",
+            "move_object()",
+            "move_object()",
+            "attach_to_plane()",
+            "release_object()"
+        ],
+        "step_instructions": [
+            "move the hand near the sponge",
+            "grasp the sponge",
+            "pick up the sponge",
+            "take the sponge from the first table",
+            "move the sponge to the second table",
+            "place the sponge on the second table",
+            "release the sponge"
+        ],
+        "object_name": "<sponge>"
+    },
+    "environment_before": {
+        "assets": [
+            "<table1>",
+            "<table2>",
+            "<trash_bin>",
+            "<floor>"
+        ],
+        "asset_states": {
+            "<table1>": "next_to(<table2>)",
+            "<trash_bin>": "on_something(<floor>)"
+        },
+        "objects": [
+            "<sponge>"
+        ],
+        "object_states": {
+            "<sponge>": "on_something(<table1>)"
+        }
+    },
+    "environment_after": {
+        "assets": [
+            "<table1>",
+            "<table2>",
+            "<trash_bin>",
+            "<floor>"
+        ],
+        "asset_states": {
+            "<table1>": "next_to(<table2>)",
+            "<trash_bin>": "on_something(<floor>)"
+        },
+        "objects": [
+            "<sponge>"
+        ],
+        "object_states": {
+            "<sponge>": "on_something(<table2>)"
+        }
+    },
+    "instruction_summary": "put the sponge on the table2",
+    "question": ""
+}

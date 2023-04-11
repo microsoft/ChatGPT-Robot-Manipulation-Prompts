@@ -1,0 +1,67 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "move_hand()",
+            "grasp_object()",
+            "detach_from_plane()",
+            "move_object()",
+            "attach_to_plane()",
+            "wipe_on_plane()",
+            "detach_from_plane()",
+            "move_object()",
+            "attach_to_plane()",
+            "release_object()"
+        ],
+        "step_instructions": [
+            "move the hand near the sponge",
+            "grasp the sponge",
+            "pick up the sponge",
+            "bring the sponge above the window",
+            "attach the sponge to the window",
+            "wipe the window with the sponge",
+            "detach the sponge from the window",
+            "bring the sponge above the table",
+            "put down the sponge",
+            "release the sponge"
+        ],
+        "object_name": "<sponge>"
+    },
+    "environment_before": {
+        "assets": [
+            "<table>",
+            "<window>",
+            "<trash_bin>",
+            "<floor>"
+        ],
+        "asset_states": {
+            "<table>": "next_to(<window>)",
+            "<trash_bin>": "on_something(<floor>)"
+        },
+        "objects": [
+            "<sponge>"
+        ],
+        "object_states": {
+            "<sponge>": "on_something(<table>)"
+        }
+    },
+    "environment_after": {
+        "assets": [
+            "<table>",
+            "<window>",
+            "<trash_bin>",
+            "<floor>"
+        ],
+        "asset_states": {
+            "<table>": "next_to(<window>)",
+            "<trash_bin>": "on_something(<floor>)"
+        },
+        "objects": [
+            "<sponge>"
+        ],
+        "object_states": {
+            "<sponge>": "on_something(<table>)"
+        }
+    },
+    "instruction_summary": "get the sponge from the table, wipe the window with it, and put the sponge back on the table",
+    "question": ""
+}

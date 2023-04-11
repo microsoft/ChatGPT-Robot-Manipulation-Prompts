@@ -1,0 +1,16 @@
+Start working. Resume from the environment below.
+"""
+{"environment":[ENVIRONMENT]}
+"""
+The instruction is as follows:
+"""
+{"instruction": "[INSTRUCTION]"}
+"""
+The dictionary that you return should be formatted as python dictionary. Follow these rules:
+1. The first element should be move_hand() to move the robot hand closer to the object. 
+2. Even though objects disappear, do not delete them from the environment and use the "STATE LIST" to keep track of all the objects. 
+3. Make sure that you output a consistent manipultation. For example, grasping should not occur in successive steps.
+4. Never left ',' at the end of the list.
+5. All keys of the dictionary should be double-quoted.
+6. Insert comments every single lines.
+Adhere to the output format I defined above. Think step by step. Insert ``` at the beginning and the end of the dictionary to separate it from the rest of your response.

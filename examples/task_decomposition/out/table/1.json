@@ -1,0 +1,55 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "move_hand()",
+            "grasp_object()",
+            "wipe_on_plane()",
+            "release_object()"
+        ],
+        "step_instructions": [
+            "move the hand near the sponge on the second table",
+            "grasp the sponge",
+            "wipe the second table with the sponge",
+            "release the sponge"
+        ],
+        "object_name": "<sponge>"
+    },
+    "environment_before": {
+        "assets": [
+            "<table1>",
+            "<table2>",
+            "<trash_bin>",
+            "<floor>"
+        ],
+        "asset_states": {
+            "<table1>": "next_to(<table2>)",
+            "<trash_bin>": "on_something(<floor>)"
+        },
+        "objects": [
+            "<sponge>"
+        ],
+        "object_states": {
+            "<sponge>": "on_something(<table2>)"
+        }
+    },
+    "environment_after": {
+        "assets": [
+            "<table1>",
+            "<table2>",
+            "<trash_bin>",
+            "<floor>"
+        ],
+        "asset_states": {
+            "<table1>": "next_to(<table2>)",
+            "<trash_bin>": "on_something(<floor>)"
+        },
+        "objects": [
+            "<sponge>"
+        ],
+        "object_states": {
+            "<sponge>": "on_something(<table2>)"
+        }
+    },
+    "instruction_summary": "wipe the table2 with the sponge",
+    "question": ""
+}

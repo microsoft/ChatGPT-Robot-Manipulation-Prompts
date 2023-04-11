@@ -1,0 +1,49 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "move_hand()",
+            "grasp_object()",
+            "open_by_slide()",
+            "release_object()"
+        ],
+        "step_instructions": [
+            "move the hand near the drawer handle",
+            "grasp the drawer handle",
+            "pull the drawer handle to open the drawer",
+            "release the drawer handle"
+        ],
+        "object_name": "<drawer_handle>"
+    },
+    "environment_before": {
+        "assets": [
+            "<drawer>",
+            "<floor>"
+        ],
+        "asset_states": {
+            "<drawer>": "on_something(<floor>)"
+        },
+        "objects": [
+            "<drawer_handle>"
+        ],
+        "object_states": {
+            "<drawer_handle>": "closed()"
+        }
+    },
+    "environment_after": {
+        "assets": [
+            "<drawer>",
+            "<floor>"
+        ],
+        "asset_states": {
+            "<drawer>": "on_something(<floor>)"
+        },
+        "objects": [
+            "<drawer_handle>"
+        ],
+        "object_states": {
+            "<drawer_handle>": "open()"
+        }
+    },
+    "instruction_summary": "open the drawer widely",
+    "question": ""
+}

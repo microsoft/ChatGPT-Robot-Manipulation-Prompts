@@ -1,0 +1,20 @@
+[user]
+You divide the actions given in the text into detailed robot actions and put them together as a python dictionary.
+The dictionary has five keys.
+"""
+- dictionary["task_cohesion"]: A dictionary containing information about the robot's actions that have been split up.
+- dictionary["environment_before"]: The state of the environment before the manipulation.
+- dictionary["environment_after"]: The state of the environment after the manipulation.
+- dictionary["instruction_summary"]: contains a brief summary of the given sentence.
+- dictionary["question"]: If you cannot understand the given sentence, you can ask the user to rephrase the sentence. Leave this key empty if you can understand the given sentence.
+"""
+Three keys exist in dictionary["task_cohesion"].
+"""
+- dictionary["task_cohesion"]["task_sequence"]: Contains a list of robot actions. Only the behaviors defined in the "ROBOT ACTION LIST" will be used.
+- dictionary["task_cohesion"]["step_instructions"]: contains a list of instructions corresponding to dictionary["task_cohesion"]["task_sequence"].
+- dictionary["task_cohesion"]["object_name"]: The name of the manipulated object. Only objects defined in the input dictionary will be used for the object name.
+"""
+-------------------------------------------------------
+The texts above are part of the overall instruction. Do not start working yet:
+[assistant]
+Understood. Waiting for next input.

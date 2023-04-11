@@ -1,0 +1,69 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "move_hand()",
+            "grasp_object()",
+            "detach_from_plane()",
+            "move_object()",
+            "move_object()",
+            "move_object()",
+            "attach_to_plane()",
+            "release_object()"
+        ],
+        "step_instructions": [
+            "move the hand near the juice",
+            "grasp the juice",
+            "pick up the juice",
+            "take the juice from the bottom of the shelf",
+            "move the juice upward",
+            "move the juice above the upper shelf",
+            "place the juice",
+            "release the juice"
+        ],
+        "object_name": "<juice>"
+    },
+    "environment_before": {
+        "assets": [
+            "<table>",
+            "<shelf_bottom>",
+            "<shelf_top>",
+            "<trash_bin>",
+            "<floor>"
+        ],
+        "asset_states": {
+            "<shelf_bottom>": "on_something(<table>)",
+            "<trash_bin>": "on_something(<floor>)"
+        },
+        "objects": [
+            "<spam>",
+            "<juice>"
+        ],
+        "object_states": {
+            "<spam>": "on_something(<table>)",
+            "<juice>": "on_something(<shelf_bottom>)"
+        }
+    },
+    "environment_after": {
+        "assets": [
+            "<table>",
+            "<shelf_bottom>",
+            "<shelf_top>",
+            "<trash_bin>",
+            "<floor>"
+        ],
+        "asset_states": {
+            "<shelf_bottom>": "on_something(<table>)",
+            "<trash_bin>": "on_something(<floor>)"
+        },
+        "objects": [
+            "<spam>",
+            "<juice>"
+        ],
+        "object_states": {
+            "<spam>": "on_something(<table>)",
+            "<juice>": "on_something(<shelf_top>)"
+        }
+    },
+    "instruction_summary": "put the juice on top of the shelf",
+    "question": ""
+}

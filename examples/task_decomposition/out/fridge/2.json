@@ -1,0 +1,61 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "move_hand()",
+            "grasp_object()",
+            "detach_from_plane()",
+            "move_object()",
+            "move_hand()",
+            "move_object()",
+            "attach_to_plane()",
+            "release_object()"
+        ],
+        "step_instructions": [
+            "move the hand near the juice",
+            "grasp the juice",
+            "pick up the juice",
+            "take the juice out of the fridge",
+            "move the hand near the floor",
+            "put the juice on the floor",
+            "place the juice",
+            "release the juice"
+        ],
+        "object_name": "<juice>"
+    },
+    "environment_before": {
+        "assets": [
+            "<fridge>",
+            "<floor>"
+        ],
+        "asset_states": {
+            "<fridge>": "on_something(<floor>)"
+        },
+        "objects": [
+            "<fridge_handle>",
+            "<juice>"
+        ],
+        "object_states": {
+            "<fridge_handle>": "open()",
+            "<juice>": "inside_something(<fridge>)"
+        }
+    },
+    "environment_after": {
+        "assets": [
+            "<fridge>",
+            "<floor>"
+        ],
+        "asset_states": {
+            "<fridge>": "on_something(<floor>)"
+        },
+        "objects": [
+            "<fridge_handle>",
+            "<juice>"
+        ],
+        "object_states": {
+            "<fridge_handle>": "open()",
+            "<juice>": "on_something(<floor>)"
+        }
+    },
+    "instruction_summary": "take the juice in the fridge and put it on the floor",
+    "question": ""
+}

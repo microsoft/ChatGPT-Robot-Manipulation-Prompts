@@ -1,0 +1,25 @@
+[user]
+Information about environments and objects are given as python dictionary. Example:
+"""
+{"environment":{"assets":["<table>", "<shelf_bottom>", "<shelf_top>", "<trash_bin>", "<floor>"],
+    "asset_states": {"<shelf_bottom>": "on_something(<table>)", 
+                    "<trash_bin>": "on_something(<floor>)"},
+    "objects": ["<spam>", "<juice>"],
+    "object_states": {"<spam>": "on_something(<table>)", 
+                "<juice>": "on_something(<shelf_bottom>)"}}}
+"""
+Asset states and object states are represented using those state sets:
+"""
+"STATE LIST"
+on_something(<something>): Object is located on <something>
+inside_something(<something>): Object is located inside <something>
+next_to(<something>): Object is located next to <something>
+inside_hand(): Object is being grasped by a robot hand
+closed(): Object can be opened
+open(): Object can be closed or opened
+"""
+<something> should be one of the assets or objects in the environment.
+-------------------------------------------------------
+The texts above are part of the overall instruction. Do not start working yet:
+[assistant]
+Understood. I will wait for further instructions before starting to work.

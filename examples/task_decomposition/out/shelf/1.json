@@ -1,0 +1,63 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "move_hand()",
+            "grasp_object()",
+            "detach_from_plane()",
+            "move_object()",
+            "release_object()"
+        ],
+        "step_instructions": [
+            "move your hand near the spam",
+            "grasp the spam",
+            "pick up the spam",
+            "bring the spam above the trash bin",
+            "release the spam to drop it in the trash bin"
+        ],
+        "object_name": "<spam>"
+    },
+    "environment_before": {
+        "assets": [
+            "<table>",
+            "<shelf_bottom>",
+            "<shelf_top>",
+            "<trash_bin>",
+            "<floor>"
+        ],
+        "asset_states": {
+            "<shelf_bottom>": "on_something(<table>)",
+            "<trash_bin>": "on_something(<floor>)"
+        },
+        "objects": [
+            "<spam>",
+            "<juice>"
+        ],
+        "object_states": {
+            "<spam>": "on_something(<table>)",
+            "<juice>": "on_something(<shelf_top>)"
+        }
+    },
+    "environment_after": {
+        "assets": [
+            "<table>",
+            "<shelf_bottom>",
+            "<shelf_top>",
+            "<trash_bin>",
+            "<floor>"
+        ],
+        "asset_states": {
+            "<shelf_bottom>": "on_something(<table>)",
+            "<trash_bin>": "on_something(<floor>)"
+        },
+        "objects": [
+            "<spam>",
+            "<juice>"
+        ],
+        "object_states": {
+            "<spam>": "inside_something(<trash_bin>)",
+            "<juice>": "on_something(<shelf_top>)"
+        }
+    },
+    "instruction_summary": "throw away the spam",
+    "question": ""
+}
