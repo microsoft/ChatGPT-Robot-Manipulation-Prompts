@@ -1,6 +1,7 @@
 # ChatGPT-Robot-Manipulation-Prompts
 
 This repository provides a set of prompts that can be used with OpenAI's ChatGPT to enable natural language communication between humans and robots for executing tasks. The prompts are designed to allow ChatGPT to convert natural language instructions into an executable robot action sequence, with a focus on robot manipulation tasks. The prompts are easy to customize and integrate with existing robot control and visual recognition systems.
+For more information, please see our [blog post](https://www.microsoft.com/en-us/research/group/applied-robotics-research/articles/gpt-models-meet-robotic-applications-long-step-robot-control-in-various-environments/) and our paper, [ChatGPT Empowered Long-Step Robot Control in Various Environments: A Case Application](https://www.microsoft.com/en-us/research/uploads/prod/2023/04/ChatGPT-Robot-Manipulation-Prompts.pdf).
 
 
 ![overview](./img/overview.jpg)
