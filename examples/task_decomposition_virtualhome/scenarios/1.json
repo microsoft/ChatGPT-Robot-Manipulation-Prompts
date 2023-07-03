@@ -1,0 +1,11 @@
+{
+  "instructions": [
+    "take the bread from the toaster on the kitchen counter and place it on the plate on the table"
+  ],
+  "program": [
+    "WalkTowards(<toaster_309>)",
+    "Grab(<breadslice_311>)",
+    "WalkTowards(<kitchentable_231>)",
+    "Put(<breadslice_311>, <plate_286>)"
+  ]
+}

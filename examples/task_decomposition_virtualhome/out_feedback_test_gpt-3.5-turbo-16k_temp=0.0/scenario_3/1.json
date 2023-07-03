@@ -1,0 +1,110 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "Walktowards(<kitchentable_231>)",
+            "Grab(<pie_320>)",
+            "Walktowards(<microwave_314>)",
+            "SwitchOn(<microwave_314>)",
+            "PutIn(<pie_320>, <microwave_314>)",
+            "SwitchOff(<microwave_314>)"
+        ],
+        "step_instructions": [
+            "Walk towards the kitchen table",
+            "Grab the pie from the table",
+            "Walk towards the microwave",
+            "Switch on the microwave",
+            "Put the pie in the microwave",
+            "Switch off the microwave"
+        ]
+    },
+    "environment_after": {
+        "assets": [
+            "<microwave_314>",
+            "<kitchencounterdrawer_244>",
+            "<kitchencounterdrawer_246>",
+            "<toilet_46>",
+            "<bathroom_11>",
+            "<kitchencounterdrawer_245>",
+            "<kitchen_207>",
+            "<kitchencounter_238>",
+            "<kitchentable_231>"
+        ],
+        "asset_states": {
+            "<microwave_314>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<kitchencounter_238>)",
+                "ON(<kitchencounterdrawer_244>)"
+            ],
+            "<kitchencounterdrawer_244>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<kitchencounter_238>)",
+                "ON(<kitchencounterdrawer_246>)"
+            ],
+            "<kitchencounterdrawer_246>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<kitchencounterdrawer_245>)",
+                "ON(<toilet_46>)"
+            ],
+            "<toilet_46>": [
+                "INSIDE(<bathroom_11>)"
+            ],
+            "<kitchencounterdrawer_245>": [
+                "INSIDE(<kitchen_207>)"
+            ],
+            "<kitchencounter_238>": [
+                "INSIDE(<kitchen_207>)"
+            ],
+            "<kitchentable_231>": [
+                "INSIDE(<kitchen_207>)"
+            ]
+        },
+        "objects": [
+            "<pie_320>",
+            "<plate_315>"
+        ],
+        "object_states": {
+            "<pie_320>": [
+                "INSIDE(<microwave_314>)"
+            ],
+            "<plate_315>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<kitchencounter_238>)",
+                "INSIDE(<microwave_314>)"
+            ]
+        },
+        "asset_properties": {
+            "<microwave_314>": [
+                "IS_OPENABLE"
+            ],
+            "<kitchencounterdrawer_244>": [
+                "NOT_OPENABLE"
+            ],
+            "<kitchencounterdrawer_246>": [
+                "NOT_OPENABLE"
+            ],
+            "<toilet_46>": [
+                "IS_OPENABLE"
+            ],
+            "<kitchencounterdrawer_245>": [
+                "NOT_OPENABLE"
+            ],
+            "<kitchencounter_238>": [
+                "NOT_OPENABLE"
+            ],
+            "<kitchentable_231>": [
+                "NOT_OPENABLE"
+            ]
+        },
+        "object_properties": {
+            "<pie_320>": [
+                "NOT_OPENABLE"
+            ],
+            "<plate_315>": [
+                "NOT_OPENABLE"
+            ]
+        }
+    },
+    "instruction_summary": "Take the pie from the table and put it in the microwave",
+    "was_execution_successful": false,
+    "user_feedback": "You are wrong! Modify your answer. You need to open and close an openable object when you 'putin' something into it."
+}

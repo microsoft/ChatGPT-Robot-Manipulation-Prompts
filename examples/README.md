@@ -3,18 +3,19 @@ This folder contains the prompts used for task decomposition from natural langua
 We provide four example prompts for the following tasks:
 * **task_decomposition**: This folder contains the prompts used for task decomposition from natural language.
 * **task_decomposition_dual_arm**: This folder contains the prompts used for task decomposition from natural language for dual-arm robots.
-* **ask_decomposition_logic**: This folder contains the prompts used for task decomposition with conditional logic from natural language.
+* **task_decomposition_logic**: This folder contains the prompts used for task decomposition with conditional logic from natural language.
+* **task_decomposition_virtualhome**: This folder contains the prompts used for the experiment with VirtualHome. Please check the README.md in this folder for more details.
 
 Directory structure should look like this:
 ```bash
-logic
+root_folder
 │───aimodel.py
 ├───out/
 │───prompt/
 │───query/
 │───system/
 ```
-* aimode.py: a python script for calling ChatGPT
+* aimodel.py: a python script for calling ChatGPT
 * system/: Contains a text file to be inserted at the beginning of the prompt.
 * prompt/: A folder for storing the prompts.
 * query/: Contains a template for converting user input into prompts.
