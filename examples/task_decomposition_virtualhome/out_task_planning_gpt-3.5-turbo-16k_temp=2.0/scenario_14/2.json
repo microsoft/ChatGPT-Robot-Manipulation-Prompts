@@ -1,0 +1,65 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "Walktowards(<bookshelf_250>)",
+            "Open(<bookshelf_250>)",
+            "Grab(<condimentbottle_296>)",
+            "Walktowards(<kitchentable_231>)",
+            "Put(<condimentbottle_296>, <kitchentable_231>)"
+        ],
+        "step_instructions": [
+            "Walk towards the bookshelf",
+            "Open the bookshelf",
+            "Grab the condiment bottle",
+            "Walk towards the table",
+            "Put the condiment bottle on the table"
+        ]
+    },
+    "environment_after": {
+        "assets": [
+            "<bookshelf_250>",
+            "<floor_212>",
+            "<kitchen_207>",
+            "<kitchentable_231>"
+        ],
+        "asset_states": {
+            "<bookshelf_250>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<floor_212>)"
+            ],
+            "<floor_212>": [
+                "INSIDE(<kitchen_207>)"
+            ],
+            "<kitchentable_231>": [
+                "INSIDE(<kitchen_207>)"
+            ]
+        },
+        "objects": [
+            "<condimentbottle_296>"
+        ],
+        "object_states": {
+            "<condimentbottle_296>": [
+                "ON(<kitchentable_231>)"
+            ]
+        },
+        "asset_properties": {
+            "<bookshelf_250>": [
+                "NOT_OPENABLE"
+            ],
+            "<floor_212>": [
+                "NOT_OPENABLE"
+            ],
+            "<kitchentable_231>": [
+                "NOT_OPENABLE"
+            ]
+        },
+        "object_properties": {
+            "<condimentbottle_296>": [
+                "NOT_OPENABLE"
+            ]
+        }
+    },
+    "instruction_summary": "Take the condiment bottle from the bookshelf and put it on the table",
+    "was_execution_successful": false,
+    "user_feedback": "You are wrong! Modify your answer. The following line failed in a simulator: Open(<bookshelf_250>)\nThe verb {open} is not applicable to the object(s). Refer to 'HUMAN ACTION LIST' in my instruction."
+}

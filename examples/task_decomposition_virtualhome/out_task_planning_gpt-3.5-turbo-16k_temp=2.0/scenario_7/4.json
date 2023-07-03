@@ -1,0 +1,106 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "Walktowards(<microwave_314>)",
+            "Grab(<salmon_328>)",
+            "Walktowards(<fridge_306>)",
+            "PutIn(<salmon_328>, <fridge_306>)"
+        ],
+        "step_instructions": [
+            "Walk towards the microwave",
+            "Grab the salmon on top of the microwave",
+            "Walk towards the fridge",
+            "Put the salmon in the fridge"
+        ]
+    },
+    "environment_after": {
+        "assets": [
+            "<fridge_306>",
+            "<floor_208>",
+            "<kitchen_207>",
+            "<microwave_314>",
+            "<kitchencounterdrawer_244>",
+            "<kitchencounterdrawer_246>",
+            "<toilet_46>",
+            "<bathroom_11>",
+            "<kitchencounterdrawer_245>",
+            "<kitchencounter_238>"
+        ],
+        "asset_states": {
+            "<fridge_306>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<floor_208>)",
+                "INSIDE(<salmon_328>)"
+            ],
+            "<floor_208>": [
+                "INSIDE(<kitchen_207>)"
+            ],
+            "<microwave_314>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<kitchencounter_238>)",
+                "ON(<kitchencounterdrawer_244>)"
+            ],
+            "<kitchencounterdrawer_244>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<kitchencounter_238>)",
+                "ON(<kitchencounterdrawer_246>)"
+            ],
+            "<kitchencounterdrawer_246>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<kitchencounterdrawer_245>)",
+                "ON(<toilet_46>)"
+            ],
+            "<toilet_46>": [
+                "INSIDE(<bathroom_11>)"
+            ],
+            "<kitchencounterdrawer_245>": [
+                "INSIDE(<kitchen_207>)"
+            ],
+            "<kitchencounter_238>": [
+                "INSIDE(<kitchen_207>)"
+            ]
+        },
+        "objects": [
+            "<salmon_328>"
+        ],
+        "object_states": {
+            "<salmon_328>": [
+                "INSIDE(<fridge_306>)"
+            ]
+        },
+        "asset_properties": {
+            "<fridge_306>": [
+                "IS_OPENABLE"
+            ],
+            "<floor_208>": [
+                "NOT_OPENABLE"
+            ],
+            "<microwave_314>": [
+                "IS_OPENABLE"
+            ],
+            "<kitchencounterdrawer_244>": [
+                "NOT_OPENABLE"
+            ],
+            "<kitchencounterdrawer_246>": [
+                "NOT_OPENABLE"
+            ],
+            "<toilet_46>": [
+                "IS_OPENABLE"
+            ],
+            "<kitchencounterdrawer_245>": [
+                "NOT_OPENABLE"
+            ],
+            "<kitchencounter_238>": [
+                "NOT_OPENABLE"
+            ]
+        },
+        "object_properties": {
+            "<salmon_328>": [
+                "NOT_OPENABLE"
+            ]
+        }
+    },
+    "instruction_summary": "Take the salmon on top of the microwave and put it in the fridge",
+    "was_execution_successful": true,
+    "user_feedback": ""
+}

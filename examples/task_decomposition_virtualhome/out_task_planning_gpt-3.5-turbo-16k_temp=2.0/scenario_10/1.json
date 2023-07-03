@@ -1,0 +1,57 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "Walktowards(<kitchentable_231>)",
+            "Grab(<pie_320>)",
+            "Walktowards(<stove_312>)",
+            "Put(<pie_320>, <stove_312>)",
+            "SwitchOn(<stove_312>)"
+        ],
+        "step_instructions": [
+            "Walk towards the table",
+            "Grab the pie on the table",
+            "Walk towards the stove",
+            "Put the pie on the stove",
+            "Switch on the stove"
+        ]
+    },
+    "environment_after": {
+        "assets": [
+            "<kitchentable_231>",
+            "<kitchen_207>",
+            "<stove_312>"
+        ],
+        "asset_states": {
+            "<kitchentable_231>": [
+                "INSIDE(<kitchen_207>)"
+            ],
+            "<stove_312>": [
+                "INSIDE(<kitchen_207>)"
+            ]
+        },
+        "objects": [
+            "<pie_320>"
+        ],
+        "object_states": {
+            "<pie_320>": [
+                "INSIDE(<stove_312>)"
+            ]
+        },
+        "asset_properties": {
+            "<kitchentable_231>": [
+                "NOT_OPENABLE"
+            ],
+            "<stove_312>": [
+                "IS_OPENABLE"
+            ]
+        },
+        "object_properties": {
+            "<pie_320>": [
+                "NOT_OPENABLE"
+            ]
+        }
+    },
+    "instruction_summary": "Take the pie on the table and warm it using the stove",
+    "was_execution_successful": true,
+    "user_feedback": ""
+}
