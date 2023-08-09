@@ -1,0 +1,11 @@
+{
+  "instructions": [
+    "reposition that plate"
+  ],
+  "program": [
+    "WalkTowards(<kitchentable_231>)",
+    "Grab(<plate_279>)",
+    "WalkTowards(<kitchentable_231>)",
+    "Put(<plate_279>, <kitchentable_231>)"
+  ]
+}

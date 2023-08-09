@@ -1,0 +1,12 @@
+{
+  "instructions": [
+    "wet the sponge"
+  ],
+  "program": [
+    "WalkTowards(<kitchencounter_238>)",
+    "Grab(<washingsponge_267>)",
+    "WalkTowards(<sink_247>)",
+    "Put(<washingsponge_267>, <sink_247>)",
+    "SwitchOn(<faucet_249>)"
+  ]
+}

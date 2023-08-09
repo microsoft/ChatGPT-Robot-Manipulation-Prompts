@@ -1,0 +1,14 @@
+{
+  "instructions": [
+    "heat up the pie using the microwave"
+  ],
+  "program": [
+    "WalkTowards(<kitchentable_231>)",
+    "Grab(<pie_320>)",
+    "WalkTowards(<microwave_314>)",
+    "Open(<microwave_314>)",
+    "Putin(<pie_320>, <microwave_314>)",
+    "Close(<microwave_314>)",
+    "SwitchOn(<microwave_314>)"
+  ]
+}
