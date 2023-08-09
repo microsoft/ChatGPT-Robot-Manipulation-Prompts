@@ -1,0 +1,44 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "Walktowards(<plate_279>)",
+            "Put(<plate_279>, <kitchentable_231>)"
+        ],
+        "step_instructions": [
+            "Walk towards the plate",
+            "Put the plate on the kitchen table"
+        ]
+    },
+    "environment_after": {
+        "assets": [
+            "<kitchentable_231>",
+            "<kitchen_207>"
+        ],
+        "asset_states": {
+            "<kitchentable_231>": [
+                "INSIDE(<kitchen_207>)"
+            ]
+        },
+        "objects": [
+            "<plate_279>"
+        ],
+        "object_states": {
+            "<plate_279>": [
+                "ON(<kitchentable_231>)"
+            ]
+        },
+        "asset_properties": {
+            "<kitchentable_231>": [
+                "NOT_OPENABLE"
+            ]
+        },
+        "object_properties": {
+            "<plate_279>": [
+                "NOT_OPENABLE"
+            ]
+        }
+    },
+    "instruction_summary": "Reposition the plate",
+    "was_execution_successful": false,
+    "user_feedback": "You are wrong! Modify your answer. The following line failed in a simulator: Put(<plate_279>, <kitchentable_231>)\nThe verb {put} is not applicable to the object(s). Refer to 'HUMAN ACTION LIST' in my instruction."
+}

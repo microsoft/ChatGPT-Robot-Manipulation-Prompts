@@ -1,0 +1,11 @@
+{
+  "instructions": [
+    "pick up the book from the table and set it on the bookshelf"
+  ],
+  "program": [
+    "WalkTowards(<kitchentable_231>)",
+    "Grab(<book_269>)",
+    "WalkTowards(<bookshelf_250>)",
+    "Put(<book_269>, <bookshelf_250>)"
+  ]
+}

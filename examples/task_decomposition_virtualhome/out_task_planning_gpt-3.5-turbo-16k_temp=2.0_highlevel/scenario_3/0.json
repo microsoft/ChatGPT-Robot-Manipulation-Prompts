@@ -1,0 +1,101 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "Walktowards(<microwave_314>)",
+            "SwitchOn(<microwave_314>)",
+            "Walktowards(<pie_320>)",
+            "Grab(<pie_320>)",
+            "Walktowards(<microwave_314>)",
+            "PutIn(<pie_320>, <microwave_314>)"
+        ],
+        "step_instructions": [
+            "Walk towards the microwave",
+            "Switch on the microwave",
+            "Walk towards the pie",
+            "Grab the pie",
+            "Walk towards the microwave",
+            "Put the pie in the microwave"
+        ]
+    },
+    "environment_after": {
+        "assets": [
+            "<kitchentable_231>",
+            "<kitchen_207>",
+            "<microwave_314>",
+            "<kitchencounterdrawer_244>",
+            "<kitchencounterdrawer_246>",
+            "<toilet_46>",
+            "<bathroom_11>",
+            "<kitchencounterdrawer_245>",
+            "<kitchencounter_238>"
+        ],
+        "asset_states": {
+            "<kitchentable_231>": [
+                "INSIDE(<kitchen_207>)"
+            ],
+            "<microwave_314>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<kitchencounter_238>)",
+                "ON(<kitchencounterdrawer_244>)"
+            ],
+            "<kitchencounterdrawer_244>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<kitchencounter_238>)",
+                "ON(<kitchencounterdrawer_246>)"
+            ],
+            "<kitchencounterdrawer_246>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<kitchencounterdrawer_245>)",
+                "ON(<toilet_46>)"
+            ],
+            "<toilet_46>": [
+                "INSIDE(<bathroom_11>)"
+            ],
+            "<kitchencounterdrawer_245>": [
+                "INSIDE(<kitchen_207>)"
+            ],
+            "<kitchencounter_238>": [
+                "INSIDE(<kitchen_207>)"
+            ]
+        },
+        "objects": [
+            "<pie_320>"
+        ],
+        "object_states": {
+            "<pie_320>": [
+                "INSIDE(<microwave_314>)"
+            ]
+        },
+        "asset_properties": {
+            "<kitchentable_231>": [
+                "NOT_OPENABLE"
+            ],
+            "<microwave_314>": [
+                "IS_OPENABLE"
+            ],
+            "<kitchencounterdrawer_244>": [
+                "NOT_OPENABLE"
+            ],
+            "<kitchencounterdrawer_246>": [
+                "NOT_OPENABLE"
+            ],
+            "<toilet_46>": [
+                "IS_OPENABLE"
+            ],
+            "<kitchencounterdrawer_245>": [
+                "NOT_OPENABLE"
+            ],
+            "<kitchencounter_238>": [
+                "NOT_OPENABLE"
+            ]
+        },
+        "object_properties": {
+            "<pie_320>": [
+                "NOT_OPENABLE"
+            ]
+        }
+    },
+    "instruction_summary": "Heat up the pie using the microwave",
+    "was_execution_successful": true,
+    "user_feedback": ""
+}

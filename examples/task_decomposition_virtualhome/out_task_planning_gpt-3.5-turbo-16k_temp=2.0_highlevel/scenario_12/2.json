@@ -1,0 +1,49 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "Walk(<cutleryknife_284>)",
+            "Grab(<cutleryknife_284>)",
+            "Walk(<kitchen_207>)",
+            "Put(<cutleryknife_284>, <kitchen_207>)"
+        ],
+        "step_instructions": [
+            "Walk to the knife",
+            "Grab the knife",
+            "Walk to another place",
+            "Put the knife in another place"
+        ]
+    },
+    "environment_after": {
+        "assets": [
+            "<kitchentable_231>",
+            "<kitchen_207>"
+        ],
+        "asset_states": {
+            "<kitchentable_231>": [],
+            "<kitchen_207>": [
+                "INSIDE(<cutleryknife_284>)"
+            ]
+        },
+        "objects": [
+            "<cutleryknife_284>"
+        ],
+        "object_states": {
+            "<cutleryknife_284>": [
+                "INSIDE(<kitchen_207>)"
+            ]
+        },
+        "asset_properties": {
+            "<kitchentable_231>": [
+                "NOT_OPENABLE"
+            ]
+        },
+        "object_properties": {
+            "<cutleryknife_284>": [
+                "NOT_OPENABLE"
+            ]
+        }
+    },
+    "instruction_summary": "Find another place for the knife",
+    "was_execution_successful": true,
+    "user_feedback": ""
+}

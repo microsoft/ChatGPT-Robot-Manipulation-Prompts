@@ -1,0 +1,11 @@
+{
+  "instructions": [
+    "drink the water from the grass"
+  ],
+  "program": [
+    "WalkTowards(<kitchentable_231>)",
+    "Grab(<waterglass_275>)",
+    "Drink(<waterglass_275>)",
+    "Put(<waterglass_275>, <kitchentable_231>)"
+  ]
+}
