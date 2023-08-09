@@ -369,6 +369,7 @@ class ChatGPT_api:
         self.last_response = text
         self.last_response = self.extract_json_part(self.last_response)
         self.last_response = self.last_response.replace("'", "\"")
+        self.last_response = self.last_response.replace("Let\"s", "Let's")
         try:
             self.json_dict = json.loads(self.last_response, strict=False)
             self.environment = self.json_dict["environment_after"]
@@ -396,6 +397,8 @@ def test_execution(comm, script):
 if __name__ == '__main__':
     comm = UnityCommunication()
     dir_name = "out_task_planning_gpt-3.5-turbo-16k_temp=2.0"
+    #dir_name = "out_task_planning_gpt-3.5-turbo-16k_temp=2.0_highlevel"
+    #dir_name = "out_task_planning_gpt-3.5-turbo-16k_temp=2.0_variation"
     waittime_sec = 30
     max_trial = 5
     time_api_called = time.time() - waittime_sec
@@ -408,6 +411,8 @@ if __name__ == '__main__':
             if os.path.exists(fp):
                 continue
             with open('scenarios/' + str(scenario_id) + '.json') as f:
+            #with open('scenarios_highlevel/' + str(scenario_id) + '.json') as f:
+            #with open('scenarios_variation/' + str(scenario_id) + '.json') as f:
                 scenario = json.load(f)
             instructions = scenario['instructions']
             reference_program = scenario['program']

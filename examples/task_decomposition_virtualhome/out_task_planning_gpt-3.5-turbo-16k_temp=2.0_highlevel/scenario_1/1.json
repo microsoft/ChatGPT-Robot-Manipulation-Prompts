@@ -1,0 +1,107 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "Walktowards(<toaster_309>)",
+            "Grab(<breadslice_311>)",
+            "Walktowards(<kitchentable_231>)",
+            "Put(<breadslice_311>, <kitchentable_231>)"
+        ],
+        "step_instructions": [
+            "Walk towards the toaster",
+            "Grab the bread slice",
+            "Walk towards the kitchen table",
+            "Put the bread slice on the table"
+        ]
+    },
+    "environment_after": {
+        "assets": [
+            "<toaster_309>",
+            "<kitchencounterdrawer_243>",
+            "<kitchencounterdrawer_241>",
+            "<toilet_46>",
+            "<bathroom_11>",
+            "<kitchencounterdrawer_242>",
+            "<kitchen_207>",
+            "<kitchencounter_238>",
+            "<kitchentable_231>"
+        ],
+        "asset_states": {
+            "<toaster_309>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<kitchencounter_238>)",
+                "ON(<kitchencounterdrawer_243>)"
+            ],
+            "<kitchencounterdrawer_243>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<kitchencounter_238>)",
+                "ON(<kitchencounterdrawer_241>)"
+            ],
+            "<kitchencounterdrawer_241>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<kitchencounterdrawer_242>)",
+                "ON(<toilet_46>)"
+            ],
+            "<toilet_46>": [
+                "INSIDE(<bathroom_11>)"
+            ],
+            "<kitchencounterdrawer_242>": [
+                "INSIDE(<kitchen_207>)"
+            ],
+            "<kitchencounter_238>": [
+                "INSIDE(<kitchen_207>)"
+            ],
+            "<kitchentable_231>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<breadslice_311>)"
+            ]
+        },
+        "objects": [
+            "<breadslice_311>",
+            "<plate_286>"
+        ],
+        "object_states": {
+            "<breadslice_311>": [
+                "INSIDE(<kitchen_207>)",
+                "INSIDE(<toaster_309>)"
+            ],
+            "<plate_286>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<kitchentable_231>)"
+            ]
+        },
+        "asset_properties": {
+            "<toaster_309>": [
+                "NOT_OPENABLE"
+            ],
+            "<kitchencounterdrawer_243>": [
+                "NOT_OPENABLE"
+            ],
+            "<kitchencounterdrawer_241>": [
+                "NOT_OPENABLE"
+            ],
+            "<toilet_46>": [
+                "IS_OPENABLE"
+            ],
+            "<kitchencounterdrawer_242>": [
+                "NOT_OPENABLE"
+            ],
+            "<kitchencounter_238>": [
+                "NOT_OPENABLE"
+            ],
+            "<kitchentable_231>": [
+                "NOT_OPENABLE"
+            ]
+        },
+        "object_properties": {
+            "<breadslice_311>": [
+                "NOT_OPENABLE"
+            ],
+            "<plate_286>": [
+                "NOT_OPENABLE"
+            ]
+        }
+    },
+    "instruction_summary": "Serve the toast on the table",
+    "was_execution_successful": true,
+    "user_feedback": ""
+}

@@ -1,0 +1,64 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "Walktowards(<kitchencounter_238>)",
+            "Grab(<washingsponge_267>)",
+            "Walktowards(<faucet_249>)",
+            "SwitchOn(<faucet_249>)"
+        ],
+        "step_instructions": [
+            "Walk towards the kitchen counter",
+            "Grab the washing sponge",
+            "Walk towards the faucet",
+            "Turn on the faucet"
+        ]
+    },
+    "environment_after": {
+        "assets": [
+            "<sink_247>",
+            "<kitchen_207>",
+            "<kitchencounter_238>",
+            "<faucet_249>"
+        ],
+        "asset_states": {
+            "<sink_247>": [
+                "INSIDE(<kitchen_207>)"
+            ],
+            "<kitchencounter_238>": [
+                "INSIDE(<kitchen_207>)"
+            ],
+            "<faucet_249>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<kitchencounter_238>)"
+            ]
+        },
+        "objects": [
+            "<washingsponge_267>"
+        ],
+        "object_states": {
+            "<washingsponge_267>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<kitchencounter_238>)"
+            ]
+        },
+        "asset_properties": {
+            "<sink_247>": [
+                "NOT_OPENABLE"
+            ],
+            "<kitchencounter_238>": [
+                "NOT_OPENABLE"
+            ],
+            "<faucet_249>": [
+                "NOT_OPENABLE"
+            ]
+        },
+        "object_properties": {
+            "<washingsponge_267>": [
+                "NOT_OPENABLE"
+            ]
+        }
+    },
+    "instruction_summary": "Wet the sponge",
+    "was_execution_successful": true,
+    "user_feedback": ""
+}

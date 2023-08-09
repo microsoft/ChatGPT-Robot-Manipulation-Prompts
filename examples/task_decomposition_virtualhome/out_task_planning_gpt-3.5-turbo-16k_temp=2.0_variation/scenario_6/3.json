@@ -1,0 +1,63 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "Walktowards(<kitchentable_231>)",
+            "Grab(<book_269>)",
+            "Walktowards(<bookshelf_250>)",
+            "Put(<book_269>, <bookshelf_250>)"
+        ],
+        "step_instructions": [
+            "Walk towards the table",
+            "Grab the book",
+            "Walk towards the bookshelf",
+            "Put the book on the bookshelf"
+        ]
+    },
+    "environment_after": {
+        "assets": [
+            "<kitchentable_231>",
+            "<kitchen_207>",
+            "<bookshelf_250>",
+            "<floor_212>"
+        ],
+        "asset_states": {
+            "<kitchentable_231>": [
+                "INSIDE(<kitchen_207>)"
+            ],
+            "<bookshelf_250>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<floor_212>)"
+            ],
+            "<floor_212>": [
+                "INSIDE(<kitchen_207>)"
+            ]
+        },
+        "objects": [
+            "<book_269>"
+        ],
+        "object_states": {
+            "<book_269>": [
+                "INSIDE(<bookshelf_250>)"
+            ]
+        },
+        "asset_properties": {
+            "<kitchentable_231>": [
+                "NOT_OPENABLE"
+            ],
+            "<bookshelf_250>": [
+                "NOT_OPENABLE"
+            ],
+            "<floor_212>": [
+                "NOT_OPENABLE"
+            ]
+        },
+        "object_properties": {
+            "<book_269>": [
+                "IS_OPENABLE"
+            ]
+        }
+    },
+    "instruction_summary": "Take the book off the table and place it onto the bookshelf",
+    "was_execution_successful": true,
+    "user_feedback": ""
+}
