@@ -1,0 +1,55 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "Walktowards(<fryingpan_270>)",
+            "Grab(<fryingpan_270>)",
+            "Walktowards(<sink_247>)",
+            "PutIn(<fryingpan_270>, <sink_247>)"
+        ],
+        "step_instructions": [
+            "Walk to the counter",
+            "Grab the frying pan",
+            "Walk to the sink",
+            "Put the frying pan in the sink"
+        ]
+    },
+    "environment_after": {
+        "assets": [
+            "<sink_247>",
+            "<kitchen_207>",
+            "<stove_312>"
+        ],
+        "asset_states": {
+            "<sink_247>": [
+                "INSIDE(<kitchen_207>)"
+            ],
+            "<stove_312>": [
+                "INSIDE(<kitchen_207>)"
+            ]
+        },
+        "objects": [
+            "<fryingpan_270>"
+        ],
+        "object_states": {
+            "<fryingpan_270>": [
+                "INSIDE(<sink_247>)"
+            ]
+        },
+        "asset_properties": {
+            "<sink_247>": [
+                "NOT_OPENABLE"
+            ],
+            "<stove_312>": [
+                "IS_OPENABLE"
+            ]
+        },
+        "object_properties": {
+            "<fryingpan_270>": [
+                "NOT_OPENABLE"
+            ]
+        }
+    },
+    "instruction_summary": "Take the frying pan from the counter and place it in the sink",
+    "was_execution_successful": false,
+    "user_feedback": "You are wrong! Modify your answer. The following line failed in a simulator: PutIn(<fryingpan_270>, <sink_247>)\nThe verb {putin} is not applicable to the object(s). Refer to 'HUMAN ACTION LIST' in my instruction."
+}

@@ -5,6 +5,7 @@ We provide four example prompts for the following tasks:
 * **task_decomposition_dual_arm**: This folder contains the prompts used for task decomposition from natural language for dual-arm robots.
 * **task_decomposition_logic**: This folder contains the prompts used for task decomposition with conditional logic from natural language.
 * **task_decomposition_virtualhome**: This folder contains the prompts used for the experiment with VirtualHome. Please check the README.md in this folder for more details.
+* **task_decomposition_virtualhome_supplementary**: This folder contains the prompts used for the experiment with VirtualHome (supplementary data). Please check the README.md in this folder for more details.
 
 Directory structure should look like this:
 ```bash

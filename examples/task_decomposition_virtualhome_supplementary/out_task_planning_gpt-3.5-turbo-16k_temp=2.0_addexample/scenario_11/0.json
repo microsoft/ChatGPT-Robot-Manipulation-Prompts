@@ -1,0 +1,67 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "Walktowards(<washingsponge_267>)",
+            "Grab(<washingsponge_267>)",
+            "Walktowards(<sink_247>)",
+            "PutIn(<washingsponge_267>, <sink_247>)",
+            "Walktowards(<faucet_249>)",
+            "SwitchOn(<faucet_249>)"
+        ],
+        "step_instructions": [
+            "Walk to the sponge",
+            "Grab the sponge",
+            "Walk to the sink",
+            "Put the sponge in the sink",
+            "Walk to the faucet",
+            "Turn on the faucet"
+        ]
+    },
+    "environment_after": {
+        "assets": [
+            "<kitchencounter_238>",
+            "<kitchen_207>",
+            "<sink_247>",
+            "<faucet_249>"
+        ],
+        "asset_states": {
+            "<kitchencounter_238>": [
+                "INSIDE(<kitchen_207>)"
+            ],
+            "<sink_247>": [
+                "INSIDE(<kitchen_207>)"
+            ],
+            "<faucet_249>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<kitchencounter_238>)"
+            ]
+        },
+        "objects": [
+            "<washingsponge_267>"
+        ],
+        "object_states": {
+            "<washingsponge_267>": [
+                "INSIDE(<sink_247>)"
+            ]
+        },
+        "asset_properties": {
+            "<kitchencounter_238>": [
+                "NOT_OPENABLE"
+            ],
+            "<sink_247>": [
+                "NOT_OPENABLE"
+            ],
+            "<faucet_249>": [
+                "NOT_OPENABLE"
+            ]
+        },
+        "object_properties": {
+            "<washingsponge_267>": [
+                "NOT_OPENABLE"
+            ]
+        }
+    },
+    "instruction_summary": "Put the sponge in the sink and wet it with water",
+    "was_execution_successful": false,
+    "user_feedback": "You are wrong! Modify your answer. The following line failed in a simulator: PutIn(<washingsponge_267>, <sink_247>)\nThe verb {putin} is not applicable to the object(s). Refer to 'HUMAN ACTION LIST' in my instruction."
+}

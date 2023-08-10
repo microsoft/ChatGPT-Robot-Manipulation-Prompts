@@ -16,8 +16,8 @@ this_folder
 │───scenarios_highlevel/
 │───scenarios_variation/
 ```
-* feedback_test.py: a python script to test the performance of task planning across trials.
-* task_planning.py: a python script to test the adjustment functionality through auto-generated feedback.
+* feedback_test.py: a python script to test the adjustment functionality through auto-generated feedback.
+* task_planning.py: a python script to test the performance of task planning across trials.
 * out_feedback_test_gpt-3.5-turbo-16k_temp=0.0/: A folder for storing the output of ChatGPT for feedback_test.py.
 * out_task_planning_gpt-3.5-turbo-16k_temp=2.0/: A folder for storing the output of ChatGPT for task_planning.py.
 * out_task_planning_gpt-3.5-turbo-16k_temp=2.0_highlevel/: A folder for storing the output of ChatGPT for task_planning.py.

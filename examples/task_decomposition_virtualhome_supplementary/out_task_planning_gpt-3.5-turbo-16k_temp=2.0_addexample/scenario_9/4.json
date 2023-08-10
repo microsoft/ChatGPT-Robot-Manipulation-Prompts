@@ -1,0 +1,79 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "Walktowards(<plate_274>)",
+            "Grab(<plate_274>)",
+            "Walktowards(<sink_247>)",
+            "PutIn(<plate_274>, <sink_247>)"
+        ],
+        "step_instructions": [
+            "Walk to the table",
+            "Grab the plate",
+            "Walk to the sink",
+            "Put the plate in the sink"
+        ]
+    },
+    "environment_after": {
+        "assets": [
+            "<kitchentable_231>",
+            "<kitchen_207>",
+            "<sink_247>"
+        ],
+        "asset_states": {
+            "<kitchentable_231>": [
+                "INSIDE(<kitchen_207>)"
+            ],
+            "<sink_247>": [
+                "INSIDE(<kitchen_207>)"
+            ]
+        },
+        "objects": [
+            "<plate_274>",
+            "<plate_286>",
+            "<plate_278>",
+            "<plate_279>"
+        ],
+        "object_states": {
+            "<plate_274>": [
+                "INSIDE(<sink_247>)"
+            ],
+            "<plate_286>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<kitchentable_231>)"
+            ],
+            "<plate_278>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<kitchentable_231>)"
+            ],
+            "<plate_279>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<kitchentable_231>)"
+            ]
+        },
+        "asset_properties": {
+            "<kitchentable_231>": [
+                "NOT_OPENABLE"
+            ],
+            "<sink_247>": [
+                "NOT_OPENABLE"
+            ]
+        },
+        "object_properties": {
+            "<plate_274>": [
+                "NOT_OPENABLE"
+            ],
+            "<plate_286>": [
+                "NOT_OPENABLE"
+            ],
+            "<plate_278>": [
+                "NOT_OPENABLE"
+            ],
+            "<plate_279>": [
+                "NOT_OPENABLE"
+            ]
+        }
+    },
+    "instruction_summary": "Put a plate that is on the table into the sink",
+    "was_execution_successful": false,
+    "user_feedback": "You are wrong! Modify your answer. The following line failed in a simulator: PutIn(<plate_274>, <sink_247>)\nThe verb {putin} is not applicable to the object(s). Refer to 'HUMAN ACTION LIST' in my instruction."
+}

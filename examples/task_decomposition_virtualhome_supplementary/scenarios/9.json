@@ -1,0 +1,23 @@
+{
+  "instructions": [
+    "Put a plate that is on the table into the sink"
+  ],
+  "program": [
+    "WalkTowards(<kitchentable_231>)",
+    "grab(<plate_286>)",
+    "WalkTowards(<sink_247>)",
+    "Put(<plate_286>, <sink_247>)",
+    "WalkTowards(<kitchentable_231>)",
+    "grab(<plate_279>)",
+    "WalkTowards(<sink_247>)",
+    "Put(<plate_279>, <sink_247>)",
+    "WalkTowards(<kitchentable_231>)",
+    "grab(<plate_278>)",
+    "WalkTowards(<sink_247>)",
+    "Put(<plate_278>, <sink_247>)",
+    "WalkTowards(<kitchentable_231>)",
+    "grab(<plate_274>)",
+    "WalkTowards(<sink_247>)",
+    "Put(<plate_274>, <sink_247>)"
+  ]
+}
