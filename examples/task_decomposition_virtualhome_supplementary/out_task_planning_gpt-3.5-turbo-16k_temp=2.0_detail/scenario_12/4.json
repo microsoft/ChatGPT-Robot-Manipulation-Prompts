@@ -1,0 +1,48 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "Walktowards(<kitchentable_231>)",
+            "Grab(<cutleryknife_284>)",
+            "Walktowards(<kitchentable_231>)",
+            "Put(<cutleryknife_284>, <kitchentable_231>)"
+        ],
+        "step_instructions": [
+            "Walk to the table",
+            "Grab the knife",
+            "Walk to the table",
+            "Put the knife on the table"
+        ]
+    },
+    "environment_after": {
+        "assets": [
+            "<kitchentable_231>",
+            "<kitchen_207>"
+        ],
+        "asset_states": {
+            "<kitchentable_231>": [
+                "INSIDE(<kitchen_207>)"
+            ]
+        },
+        "objects": [
+            "<cutleryknife_284>"
+        ],
+        "object_states": {
+            "<cutleryknife_284>": [
+                "ON(<kitchentable_231>)"
+            ]
+        },
+        "asset_properties": {
+            "<kitchentable_231>": [
+                "NOT_OPENABLE"
+            ]
+        },
+        "object_properties": {
+            "<cutleryknife_284>": [
+                "NOT_OPENABLE"
+            ]
+        }
+    },
+    "instruction_summary": "Take the knife from the table and move it to another place on the table",
+    "was_execution_successful": true,
+    "user_feedback": ""
+}

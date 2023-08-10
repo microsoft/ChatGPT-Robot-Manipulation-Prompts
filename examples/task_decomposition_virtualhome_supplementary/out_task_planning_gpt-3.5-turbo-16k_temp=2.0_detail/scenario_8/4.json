@@ -1,0 +1,75 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "Walktowards(<tv_265>)",
+            "SwitchOn(<tv_265>)"
+        ],
+        "step_instructions": [
+            "Walk towards the TV",
+            "Turn on the TV"
+        ]
+    },
+    "environment_after": {
+        "assets": [
+            "<tvstand_230>",
+            "<floor_213>",
+            "<kitchen_207>",
+            "<tv_265>",
+            "<bench_233>",
+            "<floor_210>",
+            "<bench_232>"
+        ],
+        "asset_states": {
+            "<tvstand_230>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<floor_213>)"
+            ],
+            "<floor_213>": [
+                "INSIDE(<kitchen_207>)"
+            ],
+            "<tv_265>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<tvstand_230>)",
+                "ON(<bench_232>)",
+                "ON(<bench_233>)"
+            ],
+            "<bench_233>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<floor_210>)"
+            ],
+            "<floor_210>": [
+                "INSIDE(<kitchen_207>)"
+            ],
+            "<bench_232>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<floor_210>)"
+            ]
+        },
+        "objects": [],
+        "object_states": {},
+        "asset_properties": {
+            "<tvstand_230>": [
+                "NOT_OPENABLE"
+            ],
+            "<floor_213>": [
+                "NOT_OPENABLE"
+            ],
+            "<tv_265>": [
+                "NOT_OPENABLE"
+            ],
+            "<bench_233>": [
+                "NOT_OPENABLE"
+            ],
+            "<floor_210>": [
+                "NOT_OPENABLE"
+            ],
+            "<bench_232>": [
+                "NOT_OPENABLE"
+            ]
+        },
+        "object_properties": {}
+    },
+    "instruction_summary": "Turn on the TV",
+    "was_execution_successful": true,
+    "user_feedback": ""
+}
