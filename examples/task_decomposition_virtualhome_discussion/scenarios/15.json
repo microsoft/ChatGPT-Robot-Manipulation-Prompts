@@ -1,0 +1,12 @@
+{
+  "instructions": [
+    "take the salmon on top of the microwave and put it in the microwave"
+  ],
+  "program": [
+    "WalkTowards(<microwave_314>)",
+    "Grab(<salmon_328>)",
+    "Open(<microwave_314>)",
+    "Putin(<salmon_328>, <microwave_314>)",
+    "Close(<microwave_314>)"
+  ]
+}

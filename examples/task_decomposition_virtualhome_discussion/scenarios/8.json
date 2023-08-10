@@ -1,0 +1,9 @@
+{
+  "instructions": [
+    "turn on the TV"
+  ],
+  "program": [
+    "WalkTowards(<tvstand_230>)",
+    "SwitchOn(<tv_265>)"
+  ]
+}

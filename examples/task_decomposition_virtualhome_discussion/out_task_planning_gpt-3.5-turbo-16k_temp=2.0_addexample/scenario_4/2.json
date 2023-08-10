@@ -1,0 +1,63 @@
+{
+    "task_cohesion": {
+        "task_sequence": [
+            "Walktowards(<bookshelf_250>)",
+            "Grab(<condimentshaker_298>)",
+            "Walktowards(<kitchentable_231>)",
+            "Put(<condimentshaker_298>, <kitchentable_231>)"
+        ],
+        "step_instructions": [
+            "Walk towards the bookshelf",
+            "Grab the condiment shaker",
+            "Walk towards the table",
+            "Put the condiment shaker on the table"
+        ]
+    },
+    "environment_after": {
+        "assets": [
+            "<kitchentable_231>",
+            "<kitchen_207>",
+            "<bookshelf_250>",
+            "<floor_212>"
+        ],
+        "asset_states": {
+            "<kitchentable_231>": [
+                "INSIDE(<kitchen_207>)"
+            ],
+            "<bookshelf_250>": [
+                "INSIDE(<kitchen_207>)",
+                "ON(<floor_212>)"
+            ],
+            "<floor_212>": [
+                "INSIDE(<kitchen_207>)"
+            ]
+        },
+        "objects": [
+            "<condimentshaker_298>"
+        ],
+        "object_states": {
+            "<condimentshaker_298>": [
+                "ON(<kitchentable_231>)"
+            ]
+        },
+        "asset_properties": {
+            "<kitchentable_231>": [
+                "NOT_OPENABLE"
+            ],
+            "<bookshelf_250>": [
+                "NOT_OPENABLE"
+            ],
+            "<floor_212>": [
+                "NOT_OPENABLE"
+            ]
+        },
+        "object_properties": {
+            "<condimentshaker_298>": [
+                "NOT_OPENABLE"
+            ]
+        }
+    },
+    "instruction_summary": "Take the condiment shaker from the bookshelf and place it on the table",
+    "was_execution_successful": true,
+    "user_feedback": ""
+}

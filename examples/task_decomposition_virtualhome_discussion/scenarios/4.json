@@ -1,0 +1,11 @@
+{
+  "instructions": [
+    "take the condiment shaker from the bookshelf and place it on the table"
+  ],
+  "program": [
+    "WalkTowards(<bookshelf_250>)",
+    "Grab(<condimentshaker_298>)",
+    "WalkTowards(<kitchentable_231>)",
+    "Put(<condimentshaker_298>, <kitchentable_231>)"
+  ]
+}

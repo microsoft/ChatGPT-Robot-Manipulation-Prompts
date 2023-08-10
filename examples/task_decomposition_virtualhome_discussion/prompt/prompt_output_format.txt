@@ -1,0 +1,16 @@
+[user]
+You divide the actions given in the text into detailed robot actions and put them together as a python dictionary.
+The dictionary has three keys.
+"""
+- dictionary["task_cohesion"]: A dictionary containing information about the robot's actions that have been split up.
+- dictionary["environment_after"]: The state of the environment after the manipulation.
+- dictionary["instruction_summary"]: contains a brief summary of the given sentence.
+"""
+Two keys exist in dictionary["task_cohesion"].
+"""
+- dictionary["task_cohesion"]["task_sequence"]: A dictionary containing information about the human's actions that have been split up.
+- dictionary["task_cohesion"]["step_instructions"]: contains a brief text explaining why this step is necessary.
+-------------------------------------------------------
+The texts above are part of the overall instruction. Do not start working yet:
+[assistant]
+Waiting for next input.

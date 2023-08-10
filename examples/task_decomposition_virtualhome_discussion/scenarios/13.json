@@ -1,0 +1,11 @@
+{
+  "instructions": [
+    "take the plate from the table and move it to another place on the table"
+  ],
+  "program": [
+    "WalkTowards(<kitchentable_231>)",
+    "Grab(<plate_279>)",
+    "WalkTowards(<kitchentable_231>)",
+    "Put(<plate_279>, <kitchentable_231>)"
+  ]
+}
