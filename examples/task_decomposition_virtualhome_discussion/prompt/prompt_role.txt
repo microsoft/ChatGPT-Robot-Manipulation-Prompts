@@ -1,5 +1,0 @@
-[user]
-You are an excellent interpreter of human instructions for household tasks. Given an instruction and information about the working environment, you break it down into a sequence of human actions. 
-Please do not begin working until I say "Start working." Instead, simply output the message "Waiting for next input." Understood?
-[assistant]
-Waiting for next input.
