@@ -1,4 +1,4 @@
-This folder contains the prompts used for the experiment with VirtualHome. Please check the README.md in this folder for more details. We used [gpt-3.5-turbo-16k](https://platform.openai.com/docs/models/gpt-3-5) for the experiments. Codes in this folder use the [OpenAI API](https://platform.openai.com/docs/api-reference) to call ChatGPT. If you are using the Azure OpenAI, set `use_azure` in aimode.py to True, and set `api_version` in aimode.py to '2022-12-01' (version 0301) or '2023-05-15' (any other version). By default, `use_azure` is set to False.
+This folder contains the prompts used for the experiment with VirtualHome. Please check the README.md in this folder for more details. We used [gpt-3.5-turbo-16k](https://platform.openai.com/docs/models/gpt-3-5) for the experiments. Codes in this folder use the [OpenAI API](https://platform.openai.com/docs/api-reference) to call ChatGPT. If you are using Azure OpenAI, set `use_azure` in aimode.py to True, and set `api_version` in aimode.py to '2022-12-01' (version 0301) or '2023-05-15' (any other version). By default, `use_azure` is set to False.
 Directory structure should look like this:
 ```bash
 this_folder
@@ -17,10 +17,10 @@ this_folder
 ```
 * feedback_test.py: a python script to test the adjustment functionality through auto-generated feedback.
 * task_planning.py: a python script to test the performance of task planning across trials.
-* out_feedback_test_gpt-3.5-turbo-16k_temp=0.0/: A folder for storing the output of ChatGPT for feedback_test.py.
-* out_task_planning_gpt-3.5-turbo-16k_temp=2.0/: A folder for storing the output of ChatGPT for task_planning.py.
-* out_task_planning_gpt-3.5-turbo-16k_temp=2.0_highlevel/: A folder for storing the output of ChatGPT for task_planning.py.
-* out_task_planning_gpt-3.5-turbo-16k_temp=2.0_variation/: A folder for storing the output of ChatGPT for task_planning.py.
+* out_feedback_test_gpt-3.5-turbo-16k_temp=0.0/: A folder for storing the output of ChatGPT for feedback_test.py. Data is compressed in .zip format.
+* out_task_planning_gpt-3.5-turbo-16k_temp=2.0/: A folder for storing the output of ChatGPT for task_planning.py. Data is compressed in .zip format.
+* out_task_planning_gpt-3.5-turbo-16k_temp=2.0_highlevel/: A folder for storing the output of ChatGPT for task_planning.py. Sample data is stored in .zip format.
+* out_task_planning_gpt-3.5-turbo-16k_temp=2.0_variation/: A folder for storing the output of ChatGPT for task_planning.py. Sample data is stored in .zip format.
 * system/: Contains a text file to be inserted at the beginning of the prompt.
 * prompt/: A folder for storing the prompts.
 * query/: Contains a template for converting user input, which is loaded from scenarios/, into prompts.
