@@ -1,6 +1,7 @@
-This folder contains the prompts used for task decomposition from natural language in the paper, as well as examples of ChatGPT output. We used [gpt-35-turbo](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/models#chatgpt-gpt-35-turbo-preview) for the experiments.
+This folder contains the prompts used for task decomposition from natural language in our paper, as well as examples of ChatGPT output. We used [gpt-35-turbo (0301)](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/models#chatgpt-gpt-35-turbo-preview) for the experiments. If you are using version 0301, set `api_version` in aimode.py to '2022-12-01'. For any other version, use '2023-05-15'. By default, `api_version` is set to '2022-12-01'. If you are using the OpenAI API instead of the Azure OpenAI, set `use_azure` in aimode.py to False. By default, `use_azure` is set to True.
 
-We provide four example prompts for the following tasks:
+
+We provide five example prompts for the following tasks:
 * **task_decomposition**: This folder contains the prompts used for task decomposition from natural language.
 * **task_decomposition_dual_arm**: This folder contains the prompts used for task decomposition from natural language for dual-arm robots.
 * **task_decomposition_logic**: This folder contains the prompts used for task decomposition with conditional logic from natural language.

@@ -1,5 +1,4 @@
-This folder contains the prompts used for the experiment with VirtualHome. Please check the README.md in this folder for more details. We used [gpt-3.5-turbo-16k](https://platform.openai.com/docs/models/gpt-3-5) for the experiments. Codes in this folder use the [OpenAI API](https://platform.openai.com/docs/api-reference) to call ChatGPT.
-
+This folder contains the prompts used for the experiment with VirtualHome. Please check the README.md in this folder for more details. We used [gpt-3.5-turbo-16k](https://platform.openai.com/docs/models/gpt-3-5) for the experiments. Codes in this folder use the [OpenAI API](https://platform.openai.com/docs/api-reference) to call ChatGPT. If you are using the Azure OpenAI, set `use_azure` in aimode.py to True, and set `api_version` in aimode.py to '2022-12-01' (version 0301) or '2023-05-15' (any other version). By default, `use_azure` is set to False.
 Directory structure should look like this:
 ```bash
 this_folder

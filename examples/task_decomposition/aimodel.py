@@ -19,12 +19,32 @@ prompt_load_order = ['prompt_role',
                      'prompt_example']
 
 
+# azure openai api has changed from '2023-05-15' to '2023-05-15'
+# if you are using a 0301 version, use '2022-12-01'
+# Otherwise, use '2023-05-15'
+
 class ChatGPT:
-    def __init__(self, credentials, prompt_load_order):
-        openai.api_key = credentials["chatengine"]["AZURE_OPENAI_KEY"]
-        openai.api_base = credentials["chatengine"]["AZURE_OPENAI_ENDPOINT"]
-        openai.api_type = 'azure'
-        openai.api_version = '2022-12-01'
+    VALID_API_VERSIONS = ['2022-12-01', '2023-05-15']
+
+    def __init__(
+            self,
+            credentials,
+            prompt_load_order,
+            use_azure=True,
+            api_version='2023-05-15'):
+        self.use_azure = use_azure
+        if self.use_azure:
+            openai.api_key = credentials["azureopenai"]["AZURE_OPENAI_KEY"]
+            openai.api_base = credentials["azureopenai"]["AZURE_OPENAI_ENDPOINT"]
+            openai.api_type = 'azure'
+            if api_version not in self.VALID_API_VERSIONS:
+                raise ValueError(
+                    f'api_version must be one of {self.VALID_API_VERSIONS}')
+            openai.api_version = api_version
+        else:
+            openai.organization = credentials["openai"]["YOUR_ORG_ID"]
+            openai.api_key = credentials["openai"]["OPENAI_API_KEY"]
+
         self.credentials = credentials
         self.messages = []
         self.max_token_length = 8000
@@ -33,15 +53,12 @@ class ChatGPT:
         self.query = ''
         self.instruction = ''
         # load prompt file
-        self.system_message = "<|im_start|>system\n"
         fp_system = os.path.join(dir_system, 'system.txt')
         with open(fp_system) as f:
             data = f.read()
-        self.system_message += data
-        self.system_message += "\n<|im_end|>\n"
+        self.system_message = {"role": "system", "content": data}
 
         # load prompt file
-        self.system_prompt = ""
         for prompt_name in prompt_load_order:
             fp_prompt = os.path.join(dir_prompt, prompt_name + '.txt')
             with open(fp_prompt) as f:
@@ -55,9 +72,6 @@ class ChatGPT:
                     self.messages.append({"sender": "user", "text": item})
                 else:
                     self.messages.append({"sender": "assistant", "text": item})
-        for message in self.messages:
-            self.system_prompt += f"\n<|im_start|>{message['sender']}\n{message['text']}\n<|im_end|>"
-        self.messages = []
         fp_query = os.path.join(dir_query, 'query.txt')
         with open(fp_query) as f:
             self.query = f.read()
@@ -65,18 +79,37 @@ class ChatGPT:
     # See
     # https://learn.microsoft.com/en-us/azure/cognitive-services/openai/how-to/chatgpt#chatml
     def create_prompt(self):
-        prompt = self.system_message
-        prompt += self.system_prompt
-        for message in self.messages:
-            prompt += f"\n<|im_start|>{message['sender']}\n{message['text']}\n<|im_end|>"
-        prompt += "\n<|im_start|>assistant\n"
-        print('prompt length: ' + str(len(enc.encode(prompt))))
-        if len(enc.encode(prompt)) > self.max_token_length - \
-                self.max_completion_length:
-            print('prompt too long. truncated.')
-            # truncate the prompt by removing the oldest two messages
-            self.messages = self.messages[2:]
-            prompt = self.create_prompt()
+        prompt = ""
+        if self.use_azure and openai.api_version == '2022-12-01':
+            prompt = "<|im_start|>system\n"
+            prompt += self.system_message["content"]
+            prompt += "\n<|im_end|>\n"
+            for message in self.messages:
+                prompt += f"\n<|im_start|>{message['sender']}\n{message['text']}\n<|im_end|>"
+            prompt += "\n<|im_start|>assistant\n"
+            print('prompt length: ' + str(len(enc.encode(prompt))))
+            if len(enc.encode(prompt)) > self.max_token_length - \
+                    self.max_completion_length:
+                print('prompt too long. truncated.')
+                # truncate the prompt by removing the oldest two messages
+                self.messages = self.messages[2:]
+                prompt = self.create_prompt()
+        else:
+            prompt = []
+            prompt.append(self.system_message)
+            for message in self.messages:
+                prompt.append(
+                    {"role": message['sender'], "content": message['text']})
+            prompt_content = ""
+            for message in prompt:
+                prompt_content += message["content"]
+            print('prompt length: ' + str(len(enc.encode(prompt_content))))
+            if len(enc.encode(prompt_content)) > self.max_token_length - \
+                    self.max_completion_length:
+                print('prompt too long. truncated.')
+                # truncate the prompt by removing the oldest two messages
+                self.messages = self.messages[2:]
+                prompt = self.create_prompt()
         return prompt
 
     def extract_json_part(self, text):
@@ -90,13 +123,6 @@ class ChatGPT:
         return text_json
 
     def generate(self, message, environment, is_user_feedback=False):
-        deployment_name = self.credentials["chatengine"]["AZURE_OPENAI_DEPLOYMENT_NAME_CHATGPT"]
-        # Remove unsafe user inputs. May need further refinement in the future.
-        if message.find('<|im_start|>') != -1:
-            message = message.replace('<|im_start|>', '')
-        if message.find('<|im_end|>') != -1:
-            message = message.replace('<|im_end|>', '')
-
         if is_user_feedback:
             self.messages.append({'sender': 'user',
                                   'text': message + "\n" + self.instruction})
@@ -110,16 +136,46 @@ class ChatGPT:
                 self.instruction = text_base
             self.messages.append({'sender': 'user', 'text': text_base})
 
-        response = openai.Completion.create(
-            engine=deployment_name,
-            prompt=self.create_prompt(),
-            temperature=0.1,
-            max_tokens=self.max_completion_length,
-            top_p=0.5,
-            frequency_penalty=0.0,
-            presence_penalty=0.0,
-            stop=["<|im_end|>"])
-        text = response['choices'][0]['text']
+        if self.use_azure and openai.api_version == '2022-12-01':
+            # Remove unsafe user inputs. May need further refinement in the
+            # future.
+            if message.find('<|im_start|>') != -1:
+                message = message.replace('<|im_start|>', '')
+            if message.find('<|im_end|>') != -1:
+                message = message.replace('<|im_end|>', '')
+            deployment_name = self.credentials["azureopenai"]["AZURE_OPENAI_DEPLOYMENT_NAME_CHATGPT"]
+            response = openai.Completion.create(
+                engine=deployment_name,
+                prompt=self.create_prompt(),
+                temperature=0.1,
+                max_tokens=self.max_completion_length,
+                top_p=0.5,
+                frequency_penalty=0.0,
+                presence_penalty=0.0,
+                stop=["<|im_end|>"])
+            text = response['choices'][0]['text']
+        elif self.use_azure and openai.api_version == '2023-05-15':
+            deployment_name = self.credentials["azureopenai"]["AZURE_OPENAI_DEPLOYMENT_NAME_CHATGPT"]
+            response = openai.ChatCompletion.create(
+                engine=deployment_name,
+                messages=self.create_prompt(),
+                temperature=0.1,
+                max_tokens=self.max_completion_length,
+                top_p=0.5,
+                frequency_penalty=0.0,
+                presence_penalty=0.0)
+            text = response['choices'][0]['message']['content']
+        else:
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo-16k",
+                # "gpt-4" is available, too. Check the available models in https://platform.openai.com/docs/models/
+                messages=self.create_prompt(),
+                temperature=0.1,
+                max_tokens=self.max_completion_length,
+                top_p=0.5,
+                frequency_penalty=0.0,
+                presence_penalty=0.0)
+            text = response['choices'][0].message.content
         print(text)
         self.last_response = text
         self.last_response = self.extract_json_part(self.last_response)
@@ -166,7 +222,7 @@ if __name__ == "__main__":
                 "<shelf_bottom>",
                 "<shelf_top>",
                 "<trash_bin>",
-                "floor>"],
+                "<floor>"],
             "asset_states": {
                 "<shelf_bottom>": "on_something(<table>)",
                 "<trash_bin>": "on_something(<floor>)"},
@@ -244,7 +300,11 @@ if __name__ == "__main__":
     else:
         parser.error('Invalid scenario name:' + scenario_name)
 
-    aimodel = ChatGPT(credentials, prompt_load_order=prompt_load_order)
+    aimodel = ChatGPT(
+        credentials,
+        prompt_load_order=prompt_load_order,
+        use_azure=True,
+        api_version='2022-12-01')
 
     if not os.path.exists('./out/' + scenario_name):
         os.makedirs('./out/' + scenario_name)
