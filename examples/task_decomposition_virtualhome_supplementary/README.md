@@ -22,4 +22,4 @@ this_folder
 * scenarios/: A folder for storing the scenarios used in the experiment.
 
 **Please note that:**
-This code uses [VirtualHome v2.3.0](http://virtual-home.org/documentation/master/index.html) and [the Python API](https://github.com/xavierpuigf/virtualhome) to communicate with the environment. The codes were tested with the API virtualhome==2.3.0.
+This code uses [VirtualHome v2.2.4](http://virtual-home.org/documentation/master/downloads/downloads.html#v2-2-4) simulator and [the Python API](https://github.com/xavierpuigf/virtualhome) to communicate with the environment. The codes were tested with the API virtualhome==2.3.0.
