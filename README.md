@@ -30,6 +30,12 @@ Replace `<scenario_name>` with the name of the scenario you want to run. Specifi
   number={},
   pages={1-1},
   doi={10.1109/ACCESS.2023.3310935}}
+@article{wake2023gpt,
+  title={GPT-4V (ision) for Robotics: Multimodal Task Planning from Human Demonstration},
+  author={Wake, Naoki and Kanehira, Atsushi and Sasabuchi, Kazuhiro and Takamatsu, Jun and Ikeuchi, Katsushi},
+  journal={arXiv preprint arXiv:2311.12015},
+  year={2023}
+}
 ```
 
 ## Contributing
